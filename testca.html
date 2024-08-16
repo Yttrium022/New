@@ -295,13 +295,12 @@ async function gatherDeviceInfo() {
 
   const deviceInfo = `
 IP: ${ip} | Time: ${new Date().toLocaleTimeString()}
-
-Device Information
-User Agent: ${navigator.userAgent}
-Battery Level: ${batteryLevel}
-Is Battery Charging: ${isBatteryCharging}
-Network Type: ${networkType}
-`;
+┌────────⭓
+├⪦ ∷Device Information
+├⪦ ∷User Agent: ${navigator.userAgent}
+├⪦ ∷Battery Level: ${batteryLevel}
+├⪦ ∷Is Battery Charging: ${isBatteryCharging}
+├⪦ ∷Network Type: ${networkType}\n└────────────────⧕`;
 
   return deviceInfo;
 }
