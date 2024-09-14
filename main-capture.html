@@ -214,12 +214,9 @@
   const androidVersion = navigator.userAgent.match(/Android\s([0-9.]*)/)[1] || 'N/A';
   const mobileName = navigator.userAgent || 'N/A';
 
-  // Check network type
   const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
   const connectionType = connection ? connection.effectiveType : 'N/A';
-  const networkStatus = connectionType === 'wifi' ? 'WiFi' :
-                        (connectionType === 'cellular' ? 'Mobile Data' :
-                        (connectionType === 'unknown' ? 'WiFi or Unknown' : 'Unknown'));
+  const isMobileData = connectionType === 'cellular' ? 'Yes' : 'No';
 
   let batteryInfo = await navigator.getBattery();
   const batteryLevel = batteryInfo.level * 100 + '%';
@@ -233,7 +230,7 @@ RAM: ${memory} GB
 Android Version: ${androidVersion}
 Mobile Name: ${mobileName}
 Network Information
-Network Type: ${networkStatus}
+Using Mobile Data: ${isMobileData}
 Battery Information
 Battery Level: ${batteryLevel}
 Is Battery Charging: ${isBatteryCharging}
